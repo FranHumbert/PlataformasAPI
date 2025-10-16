@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('videojuego_id')->constrained()->onDelete('cascade');
             $table->foreignId('plataforma_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+
+            $table->unique(['videojuego_id', 'plataforma_id'], 'unique_videojuego_plataforma');
         });
     }
 
